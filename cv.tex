@@ -1,0 +1,120 @@
+\documentclass{article}
+
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage[absolute]{textpos} % showboxes
+\usepackage{graphicx}
+
+\titleformat{\section}
+{\huge}
+{}
+{.25em}
+{\bfseries}[\titlerule]
+
+\titleformat{\subsection}
+{\bfseries\Large}
+{}
+{.5em}
+{}
+
+\titleformat{\subsubsection}%[runin]
+{\bfseries}
+{\hspace{-1cm}}
+{0em}
+{}
+
+\titlespacing{\subsubsection}
+{2em}{.25em}{.25em}
+
+\renewcommand{\maketitle}{
+    \begin{center}
+        {\huge\bfseries\theauthor}
+
+        \vspace{.25em}
+
+        \Large{Software Engeneering Student at University of Minho}
+
+        \vspace{.25em}
+
+        \large{\thetitle}
+    \end{center}
+}
+
+\setlength{\TPHorizModule}{20mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{10mm}{10mm}
+\setlength{\parindent}{0pt}
+
+\pagenumbering{gobble}
+
+\begin{document}
+\title{Curriculum Vitae}
+\author{Pedro Mendes}
+
+\maketitle
+
+\begin{textblock}{2}(0,1.8)
+    \begin{flushright}
+        \subsection{\hfill About me}
+        \subsubsection{\hfill Birthdate}
+        1997-04-25
+        \subsubsection{\hfill Email}
+        \href{mailto:pedro.mendes.26@gmail.com}{pedro.mendes.26\\@gmail.com}
+        \subsubsection{\hfill Github}
+        \href{https://github.com/Mendess2526}{Mendess2526}
+        \subsubsection{\hfill LinkedIn}
+        \href{https://www.linkedin.com/in/mendes2526/}{mendes2526}
+
+        \subsection{\hfill Languages}
+        \subsubsection{\hfill Spoken}
+        Portuguese (native), English (CAE 2)
+        \subsubsection{\hfill Programming}
+        C, Rust, C++, Java, Haskell, Elixir, Bash, Python.
+        \subsubsection{\hfill Query}
+        SQL (mysql, postgres), NO-SQL (mongodb, neo4j)
+        \subsubsection{\hfill Markup}
+        \LaTeX, Markdown, Html.
+    \end{flushright}
+\end{textblock}
+\begin{textblock}{7.3}(2.3,1.8)
+
+    \section{Education}
+    \begin{tabular}{lp{8.4cm}r}
+        2015-Present & \textbf{Bachelors} & University of Minho\\
+        & Software Engineering &
+    \end{tabular}
+    \section{Highlighted Projects}
+    \begin{tabular}{lp{10.4cm}r}
+        C / Java & \textbf{Structured Programming} & \href{https://github.com/Mendess2526/LI3_StructuredPrograming}{Repository}\\
+        & This project focused on writing structured code taking into account
+        encapsulation, whilst being efficient for processing great volumes of
+        data (Grade: 18/20). &\\
+        Rust & \textbf{PacMan} & \href{https://github.com/Mendess2526/rust-pacman}{Repository}\\
+        & An implementation of the classic PacMan game in rust, using openGL. &\\
+        Markdown & \textbf{ResumosMIEI} & \href{https://github.com/Mendess2526/ResumosMIEI}{Repository}\\
+        & A collection of notes written in Portuguese to help fellow students
+        study the base concepts of computer science, lectured at University of
+        Minho. &
+    \end{tabular}
+
+    \section{Experience}
+    \begin{tabular}{lp{8.4cm}r}
+        2017 & \textbf{MIUP} & University of Minho\\
+        & Inter-University Programming Marathon &\\
+        2018-Present & \textbf{Member of CaOS} & CeSIUM\\
+        & CaOS is the open source group at CeSIUM, the software engineering
+        student centre at Minho University. We promote open source software
+        like GNU/Linux, freedom of speech and net neutrality &\\
+        2019 & \textbf{SEI} & CeSIUM \\
+        & \textbf{S}emana da \textbf{E}ngenharia \textbf{I}nformática: An event
+        populated with talks and workshops with various companies. I was part of
+        the IT staff in the 2019 edition. &\\
+    \end{tabular}
+
+    \section{Interests}
+    The GNU/Linux OS; Systems Programming; Giving Mentorship; Game Design;
+\end{textblock}
+
+\end{document}

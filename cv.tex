@@ -3,47 +3,63 @@
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage[margin=0.5in]{geometry}
-\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkcolor,
+    pdfborderstyle={/S/U/W 1}
+}
 \usepackage[absolute]{textpos} % showboxes
 \usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage[framemethod=tikz]{mdframed}
 
 \titleformat{\section}
 {\huge}
 {}
 {.25em}
-{\bfseries}[\titlerule]
-
-\titleformat{\subsection}
-{\bfseries\Large}
-{}
-{.5em}
-{}
-
-\titleformat{\subsubsection}%[runin]
 {\bfseries}
-{\hspace{-1cm}}
-{0em}
-{}
 
-\titlespacing{\subsubsection}
-{2em}{.25em}{.25em}
+%% Space around title
+\titlespacing*{\section}{0pt}{0.4\baselineskip}{\baselineskip}
 
-\renewcommand{\maketitle}{\begin{center}
-    {\huge\bfseries\theauthor}
+\definecolor{headercolor}{rgb}{0.122, 0.435, 0.698}
+\definecolor{linkcolor}{rgb}{0.192, 0.349, 0.408}
 
-    \vspace{.25em}
+\newmdenv[
+]{headerbox}
 
-    \Large{Informatics Engineering Student at Instituto Superior Técnico de Lisboa}
+\renewcommand{\maketitle}
+{
+    % \begin{headerbox}
+        \begin{center}
+            {\huge\bfseries\theauthor}
 
-    \vspace{.25em}
+            \vspace{.25em}
 
-    \large{\thetitle}
-\end{center}
+            \Large{Informatics Engineering Student at Instituto Superior Técnico
+            de Lisboa}
+
+            \vspace{.25em}
+
+            \large{\thetitle}
+
+            \vspace{.25em}
+
+            \faMapMarker: Braga, Portugal |
+            \href{mailto:pedro.mendes.26@gmail.com}{\faEnvelope:
+            pedro.mendes.26@gmail.com} |
+            \faPhone: (+351) 926546003 |
+            \href{https://github.com/mendess}{\faGithub: mendess} |
+            \href{https://www.linkedin.com/in/mendes2526/}{\faLinkedinSquare: mendes2526}
+
+        \end{center}
+    % \end{headerbox}
 }
 
-\setlength{\TPHorizModule}{16mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\textblockorigin{5mm}{8mm}
 \setlength{\parindent}{0pt}
 
 \pagenumbering{gobble}
@@ -54,93 +70,103 @@
 
 \maketitle
 
-\begin{textblock}{2} (0,1.2)
-    \begin{flushright}
-        \subsection{\hfill About me}
-        \subsubsection{\hfill Date of Birth}
-        1997--04--25
-        \subsubsection{\hfill Email}
-        \href{mailto:pedro.mendes.26@gmail.com}{pedro.mendes.26\\@gmail.com}
-        \subsubsection{\hfill Github}
-        \href{https://github.com/mendess}{mendess}
-        \subsubsection{\hfill LinkedIn}
-        \href{https://www.linkedin.com/in/mendes2526/}{mendes2526}
+\hrule
 
-        \subsection{\hfill Languages}
-        \subsubsection{\hfill Spoken}
-        Portuguese (native), English (C 2).
-        \subsubsection{\hfill Programming}
-        Rust, C, C++, Java, C\#, Javascript, Bash, Python, Ruby, Kotlin,
-        Haskell, Elixir.
-        \subsubsection{\hfill Query}
-        SQL (mysql, postgres), NO-SQL (mongodb, neo4j).
-        \subsubsection{\hfill Markup}
-        \LaTeX, Markdown, Html, CSS\@.
-        \subsection{\hfill Tools}
-        Advanced Git knowledge.\\
-        Linux.\\
-        GNU core utils.\\
-        Docker.
-    \end{flushright}
-\end{textblock}
-\begin{textblock}{9.4} (2.3,1.2)
+\begin{multicols}{2}
+    \textbf{Programming:} Rust, C, C++, Java, C\#, Kotlin, Javascript,
+    Bash, Python, Ruby, Haskell, Elixir.
 
-    \section{Education}
-    \begin{tabular}{lp{8.4cm}r}
-        2015 --- 2019 & \textbf{Bachelors in Science of Computer Engineering} & University of Minho\\
-        & Software Engineering. Grade Average: 15 &\\
-        & Informatics Labs Average: 19 & \\
-        & Algorithms and Complexity: 16 & \\
-        & Program Calculus: 20 & \\
-        & Imperative and OO programming: 18 and 19 (respectively) &\\
-        & Compilers: 17 &\\
-        2019 --- Present & \textbf{Masters in Information Systems and Computer Engineering} & IST\\
-    \end{tabular}
+    \textbf{Markup} \LaTeX, Markdown, Html, CSS\@.
 
-    \section{Highlighted Projects}
-    \begin{tabular}{lp{10.4cm}r}
-        C++ & \textbf{Computer Graphics (University project)} & \href{https://github.com/mendess/CG}{Repository}\\
-        & A generic graphics engine, capable of rendering scenes written in XML (Grade 20/20). &\\
-        Markdown & \textbf{ResumosMIEI} & \href{https://github.com/mendess/ResumosMIEI}{Repository}\\
-        & A collection of notes written in Portuguese to help students
-        study the base concepts of computer science, lectured at University of
-        Minho. &\\
-        Rust & \textbf{PacMan} & \href{https://github.com/mendess/rust-pacman}{Repository}\\
-        & An implementation of the classic PacMan game in rust, using openGL.\@ &\\
-        Rust & \textbf{Scryfall} & \href{https://github.com/mendess/scryfall-rs}{Repository}\\
-        & A wrapper around a REST API for fetching and searching for cards from
-        the Magic: The Gathering\texttrademark{} card game. &\\
-        C & \textbf{Parallel and Distributed Computing (University project)} &
-        \href{https://github.com/mendess/CPD}{Repository}\\
-        & This project focused on writing efficient parallel code in C. Using
-        the OpenMP and MPI frameworks. (Grade 17/20) &\\
-    \end{tabular}
+    \textbf{Databases:} SQL (mysql, postgres), NO-SQL (mongodb, neo4j).
 
-    \section{Experience}
-    \begin{tabular}{lp{8.4cm}r}
-        2017 & \textbf{MIUP} & University of Minho\\
-        & Inter-University Programming Marathon. &\\
-        2018 --- 2020 & \textbf{Member of CaOS} & CeSIUM\\
-        & CaOS is the open source group at CeSIUM, the software engineering
-        student centre at Minho University. &\\
-        2018 --- Present & \textbf{Admin of the official MiEI Discord} & Discord\\
-        & A 1k+ member discord community focused on helping new students and sharing
-        knowledge. &\\
-        2019 & \textbf{SEI} & CeSIUM \\
-        & \textbf{S}emana da \textbf{E}ngenharia \textbf{I}nformática: An event
-        populated with talks and workshops with various companies. I was part of
-        the IT staff in the 2019 edition. &\\
-        2019 --- $\infty$ & \textbf{Open source contributions} & Github\\
-        & \href{https://github.com/rust-lang/rust/pulls?q=author\%3Amendess+}
-                {rust-lang/rust}
+    \textbf{Tools:} Advanced Git knowledge, Linux, GNU core utils, Docker.
 
-          \href{https://github.com/serenity-rs/serenity/pulls?q=author\%3Amendess+}
-                {serenity-rs/serenity} &
-    \end{tabular}
+\end{multicols}
 
-    \section{Interests}
-    Mentoring\@; Systems Programming\@; API Design\@; Automation\@; Linux
+\section{Highlighted Projects}
 
-\end{textblock}
+\begin{tabular}{p{0.11\linewidth}p{0.73\linewidth}l}
+    C & \textbf{Parallel and Distributed Computing (University project)} &
+    \href{https://github.com/mendess/CPD}{Repository}\\
+    & Successfully used openMP and MPI to develop a blazingly fast,
+    multiprocess system to calculate product recommendations in C. (Grade
+    17/20) &\\
+
+    Kotlin \& Rust & \textbf{Secure Child Tracking Service (University project)} &
+    \href{https://github.com/mendess/SIRS}{Repository}\\
+    & Developed a secure and easy to use app that allows parents to track
+    where their child is, taking care to not compromise the sensitive data
+    the app needs to work with. (Grade 19/20) &\\
+
+    Rust & \textbf{Scryfall} &
+    \href{https://crates.io/crates/scryfall}{Crates.io}\\
+    & A type safe and complete wrapper around a REST API for fetching and
+    searching for cards from the Magic: The Gathering\texttrademark{} card
+    game. &\\
+
+    Markdown & \textbf{ResumosMIEI} &
+    \href{https://github.com/mendess/ResumosMIEI}{Repository}\\
+    & A collection of notes written in Portuguese to help students study the
+    base concepts of computer science, lectured at University of Minho. &\\
+
+    C++ & \textbf{Computer Graphics (University project)} &
+    \href{https://github.com/mendess/CG}{Repository}\\
+    & A generic graphics engine, capable of rendering scenes written in XML
+    (Grade 20/20). &\\
+
+\end{tabular}
+
+\section{Experience}
+
+\begin{tabular}{p{0.11\linewidth}p{0.73\linewidth}l}
+    2019--$\infty$ & \textbf{Open source contributions} & Github\\ &
+    \href{https://github.com/rust-lang/rust/pulls?q=author\%3Amendess+}
+    {rust-lang/rust}
+
+    \href{https://github.com/serenity-rs/serenity/pulls?q=author\%3Amendess+}
+    {serenity-rs/serenity} &\\
+
+    2019 & \textbf{SEI\@: \underline{S}emana da \underline{E}ngenharia
+    \underline{I}nformática} & CeSIUM \\
+    & An event populated with talks and workshops with various companies. I
+    developed the frontend for the event's badge collecting competition. &\\
+
+    2018--Now & \textbf{Co-Creator of the official MiEI
+    Discord} & Discord\\
+    & A 1000+ member discord community focused on helping new students and
+    sharing knowledge, where I have provided extensive tutoring and provided a
+    space for new students to feel welcomed and included. &\\
+
+    2018--2020 & \textbf{Member of CAOS} & CeSIUM\\
+    & An open source group at CeSIUM, the software engineering student centre at
+    Minho University. &\\
+
+\end{tabular}
+
+\section{Education}
+
+\begin{tabular}{p{0.11\linewidth}p{0.65\linewidth}p{0.16\linewidth}}
+
+    2019 --- Now & \textbf{Masters in Information Systems and Computer
+    Engineering} & IST\\
+    & Network and Computer Security: 15/20 &\\
+    & Advanced Programming: 18/20 &\\
+
+    2015 --- 2019 & \textbf{Bachelors in Science of Computer Engineering} &
+    University of Minho\\
+    & Grade Average: 15/20 &\\
+    & Informatics Labs (1, 2, 3 and 4) Average: 19/20 & \\
+    & Algorithms and Complexity: 16/20 & \\
+    & Program Calculus: 20/20 & \\
+    & Imperative and OO programming: 18/20 and 19/20 (respectively) &\\
+    & Compilers: 17/20 &\\
+
+\end{tabular}
+
+% \section{Interests}
+
+% Mentoring\@; Systems Programming\@; API Design\@; Automation\@; Linux
+
 
 \end{document}

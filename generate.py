@@ -78,7 +78,7 @@ projects = [
         title='An auto scalling sudoku solver',
         description='Using AWS\'s API\'s and by instrumenting the code of a sudoku solving program\
                 we were able to scale up and down the resources available to the application according\
-                to how much compute it was needing in real time',
+                to how much computing power it was needing in real time',
         link='https://github.com/mendess/CNV',
         grade=17,
     ),

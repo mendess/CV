@@ -89,7 +89,7 @@ projects = [
                 established high throughput, low latency and reliable connection between them\
                 over the internet',
         link='https://github.com/mendess/IoT',
-        grade='??',
+        grade='16',
     ),
 ]
 

@@ -94,7 +94,7 @@ projects = [
 ]
 
 def generate_tex(project_idx):
-    with open('./cv_stripped.tex', 'r') as template, open('./cv_generated.tex', 'w') as generated:
+    with open('./cv_template.tex', 'r') as template, open('./cv_generated.tex', 'w') as generated:
         for line in template:
             if 'PROJECTS' not in line:
                 generated.write(line)

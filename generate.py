@@ -67,7 +67,7 @@ projects = [
     ),
     Project(
         language='C++',
-        title='Generic Graphic Engine (University project)',
+        title='Generic Graphics Engine (University project)',
         description='A generic graphics engine, capable of efficiently rendering any kind\
                 of scene defined in an XML configuration file',
         link='https://github.com/mendess/CG',

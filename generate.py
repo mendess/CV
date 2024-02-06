@@ -20,7 +20,7 @@ class Project:
         self.grade = grade
 
     def __str__(self):
-        return (r'{language} & \textbf{{{title}}} & \href{{{link}}}{{{linkname}}}\\' + '\n'
+        return (r'{language} & \ul{{\textbf{{{title}}}}} & \href{{{link}}}{{{linkname}}}\\' + '\n'
                 r'& {description} & {grade}\\').format(
                     language=self.language,
                     title=self.title,
@@ -84,7 +84,7 @@ projects = [
     ),
     Project(
         language='C++ \& Go',
-        title='Internet of Sensors and Actuators',
+        title='Internet of Sensors and Actuators (University project)',
         description='Assembled an arduino with various sensors and one with various leds and\
                 established high throughput, low latency and reliable connection between them\
                 over the internet',
@@ -123,7 +123,7 @@ if __name__ == '__main__':
             i = 0
             for p in projects:
                 if i in p_to_use: print('\033[2m', end='')
-                print(i, p.description, '\033[0m')
+                print(i, p.title, '|', p.language, '\033[0m')
                 i += 1
             print(f'{len(p_to_use)} / 5 projects picked')
             new_p = int(input('? '))
